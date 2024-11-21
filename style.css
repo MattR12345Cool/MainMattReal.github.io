@@ -1,0 +1,106 @@
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #1f1f1f;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+footer {
+    background-color: #1f1f1f;
+    padding: 10px;
+    text-align: center;
+}
+
+#game-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game {
+    background-color: #282828;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 80%;
+    transition: background-color 0.3s ease;
+}
+
+.game:hover {
+    background-color: #3a3a3a;
+}
+
+button {
+    background-color: #6200ea;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+button span {
+    position: relative;
+    z-index: 2;
+}
+
+button::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+button:active::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+#footer-box {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#footer-box p {
+    font-size: 20px;
+}
+
+@media (max-width: 600px) {
+    .game {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+        padding: 15px 0;
+    }
+}
